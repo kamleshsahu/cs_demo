@@ -1,14 +1,10 @@
 
-package com.androidtutz.anushka.tmdbclient.model;
+package com.androidtutz.anushka.tmdbclient.model.customsearch_model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -53,12 +49,12 @@ public class Pagemap implements Parcelable
     private final static long serialVersionUID = -9203134672373038046L;
 
     protected Pagemap(Parcel in) {
-        in.readList(this.cse_thumbnail,(com.androidtutz.anushka.tmdbclient.model.Cse_thumbnail.class.getClassLoader()));
+        in.readList(this.cse_thumbnail,(Cse_thumbnail.class.getClassLoader()));
         in.readList(this.metatags, (Metatag.class.getClassLoader()));
-        in.readList(this.cse_image, (com.androidtutz.anushka.tmdbclient.model.Cse_image.class.getClassLoader()));
-        in.readList(this.website, (com.androidtutz.anushka.tmdbclient.model.Website.class.getClassLoader()));
-        in.readList(this.product, (com.androidtutz.anushka.tmdbclient.model.Product.class.getClassLoader()));
-        in.readList(this.hproduct, (com.androidtutz.anushka.tmdbclient.model.Hproduct.class.getClassLoader()));
+        in.readList(this.cse_image, (Cse_image.class.getClassLoader()));
+        in.readList(this.website, (Website.class.getClassLoader()));
+        in.readList(this.product, (Product.class.getClassLoader()));
+        in.readList(this.hproduct, (Hproduct.class.getClassLoader()));
     }
 
     public Pagemap() {

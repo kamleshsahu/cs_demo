@@ -6,7 +6,7 @@
     <data>
         <variable
             name="movie"
-            type="com.androidtutz.anushka.tmdbclient.model.Item" />
+            type="com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item" />
     </data>
 <LinearLayout
     android:layout_width="match_parent"

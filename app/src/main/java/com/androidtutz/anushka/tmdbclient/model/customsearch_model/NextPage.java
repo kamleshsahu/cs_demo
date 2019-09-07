@@ -1,16 +1,14 @@
 
-package com.androidtutz.anushka.tmdbclient.model;
+package com.androidtutz.anushka.tmdbclient.model.customsearch_model;
 
 import java.io.Serializable;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
-import android.support.v7.util.DiffUtil;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Request implements Serializable, Parcelable
+public class NextPage implements Serializable, Parcelable
 {
 
     @SerializedName("title")
@@ -28,9 +26,6 @@ public class Request implements Serializable, Parcelable
     @SerializedName("startIndex")
     @Expose
     private Integer startIndex;
-
-
-
     @SerializedName("inputEncoding")
     @Expose
     private String inputEncoding;
@@ -43,25 +38,25 @@ public class Request implements Serializable, Parcelable
     @SerializedName("cx")
     @Expose
     private String cx;
-    public final static Creator<Request> CREATOR = new Creator<Request>() {
+    public final static Creator<NextPage> CREATOR = new Creator<NextPage>() {
 
 
         @SuppressWarnings({
             "unchecked"
         })
-        public Request createFromParcel(Parcel in) {
-            return new Request(in);
+        public NextPage createFromParcel(Parcel in) {
+            return new NextPage(in);
         }
 
-        public Request[] newArray(int size) {
-            return (new Request[size]);
+        public NextPage[] newArray(int size) {
+            return (new NextPage[size]);
         }
 
     }
     ;
-    private final static long serialVersionUID = 6861805605127596358L;
+    private final static long serialVersionUID = 7386781989970536534L;
 
-    protected Request(Parcel in) {
+    protected NextPage(Parcel in) {
         this.title = ((String) in.readValue((String.class.getClassLoader())));
         this.totalResults = ((String) in.readValue((String.class.getClassLoader())));
         this.searchTerms = ((String) in.readValue((String.class.getClassLoader())));
@@ -73,7 +68,7 @@ public class Request implements Serializable, Parcelable
         this.cx = ((String) in.readValue((String.class.getClassLoader())));
     }
 
-    public Request() {
+    public NextPage() {
     }
 
     public String getTitle() {
@@ -163,20 +158,5 @@ public class Request implements Serializable, Parcelable
     public int describeContents() {
         return  0;
     }
-
-    public static final DiffUtil.ItemCallback<Request> CALLBACK=new DiffUtil.ItemCallback<Request>() {
-        @Override
-        public boolean areItemsTheSame(Request oldItem, Request newItem) {
-            return oldItem.startIndex == newItem.startIndex;
-        }
-
-        @Override
-        public boolean areContentsTheSame(Request oldItem, Request newItem) {
-            return false;
-        }
-
-
-    };
-
 
 }

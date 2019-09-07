@@ -7,26 +7,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.androidtutz.anushka.tmdbclient.R;
-import com.androidtutz.anushka.tmdbclient.databinding.ActivityMovieBinding;
-import com.androidtutz.anushka.tmdbclient.model.Item;
+
+import com.androidtutz.anushka.tmdbclient.databinding.ActivityItemBinding;
+import com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item;
 import com.bumptech.glide.Glide;
 
 
-public class MovieActivity extends AppCompatActivity {
+public class ImageActivity extends AppCompatActivity {
 
     private Item movie;
-    private ActivityMovieBinding activityMovieBinding;
+    private ActivityItemBinding activityMovieBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie);
+        setContentView(R.layout.activity_item);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        activityMovieBinding= DataBindingUtil.setContentView(this,R.layout.activity_movie);
+        activityMovieBinding= DataBindingUtil.setContentView(this,R.layout.activity_item);
 
         Intent intent = getIntent();
 

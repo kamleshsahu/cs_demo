@@ -6,13 +6,13 @@
     <data>
         <variable
             name="movie"
-            type="com.androidtutz.anushka.tmdbclient.model.Item" />
+            type="com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item" />
     </data>
 <android.support.design.widget.CoordinatorLayout
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MovieActivity">
+    tools:context=".view.ImageActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_movie"
+    <include layout="@layout/content_item"
         android:id="@+id/secondary_layout"
         bind:secondaryMovie="@{movie}"
 

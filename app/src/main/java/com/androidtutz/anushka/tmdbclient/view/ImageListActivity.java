@@ -7,45 +7,43 @@ import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.androidtutz.anushka.tmdbclient.R;
 
 import com.androidtutz.anushka.tmdbclient.adapter.csAdapter;
-import com.androidtutz.anushka.tmdbclient.databinding.ActivityMainBinding;
-import com.androidtutz.anushka.tmdbclient.model.Item;
-import com.androidtutz.anushka.tmdbclient.old_model.Movie;
-import com.androidtutz.anushka.tmdbclient.viewmodel.MainActivityViewModel;
-import com.androidtutz.anushka.tmdbclient.viewmodel.csMainActivityViewModel;
+import com.androidtutz.anushka.tmdbclient.databinding.ActivityImagelistBinding;
 
-public class csMainActivity extends AppCompatActivity {
+import com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item;
+
+import com.androidtutz.anushka.tmdbclient.viewmodel.ListViewActivityViewModel;
+
+public class ImageListActivity extends AppCompatActivity {
 
     private PagedList<Item> movies;
     private RecyclerView recyclerView;
     private csAdapter movieAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
 //    private MainActivityViewModel mainActivityViewModel;
-    private ActivityMainBinding activityMainBinding;
-    private csMainActivityViewModel csmainActivityViewModel;
+    private ActivityImagelistBinding activityMainBinding;
+    private ListViewActivityViewModel csmainActivityViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_imagelist);
 
         getSupportActionBar().setTitle("TMDB Popular Movies Today");
 
-        activityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main);
+        activityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_imagelist);
 
 
-       csmainActivityViewModel= ViewModelProviders.of(this).get(csMainActivityViewModel.class);
+       csmainActivityViewModel= ViewModelProviders.of(this).get(ListViewActivityViewModel.class);
 
        if(getIntent().hasExtra("query")){
            new Handler()

@@ -1,13 +1,11 @@
 
-package com.androidtutz.anushka.tmdbclient.model;
+package com.androidtutz.anushka.tmdbclient.model.customsearch_model;
 
-import java.io.Serializable;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 import android.support.v7.util.DiffUtil;
 
-import com.androidtutz.anushka.tmdbclient.old_model.Movie;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

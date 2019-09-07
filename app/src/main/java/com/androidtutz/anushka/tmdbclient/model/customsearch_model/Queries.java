@@ -1,11 +1,11 @@
 
-package com.androidtutz.anushka.tmdbclient.model;
+package com.androidtutz.anushka.tmdbclient.model.customsearch_model;
 
 import java.io.Serializable;
 import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -37,8 +37,8 @@ public class Queries implements Serializable, Parcelable
     private final static long serialVersionUID = -9125174727204263399L;
 
     protected Queries(Parcel in) {
-        in.readList(this.request, (com.androidtutz.anushka.tmdbclient.model.Request.class.getClassLoader()));
-        in.readList(this.nextPage, (com.androidtutz.anushka.tmdbclient.model.NextPage.class.getClassLoader()));
+        in.readList(this.request, (Request.class.getClassLoader()));
+        in.readList(this.nextPage, (NextPage.class.getClassLoader()));
     }
 
     public Queries() {
