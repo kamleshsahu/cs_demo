@@ -45,29 +45,23 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tvReleaseDate"
+                    android:text="@{secondaryMovie.link}"
+                    android:padding="16dp"
+                    android:textSize="20sp"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/tvMovieRating"
                     android:padding="16dp"
                     android:textSize="20sp"
                     android:text="@{secondaryMovie.snippet}"
                     />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvReleaseDate"
-                    android:text="@{secondaryMovie.snippet}"
-                    android:padding="16dp"
-                    android:textSize="20sp"
-                   />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPlotsynopsis"
-                    android:text="@{secondaryMovie.snippet}"
-                    android:padding="16dp"
-                    android:textSize="20sp"
-                     />
 
 
 

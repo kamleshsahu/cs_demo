@@ -24,7 +24,7 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent=new Intent(SearchActivity.this,ImageListActivity.class);
 
         if(((EditText)findViewById(R.id.tv_query)).getText().toString().equals("")){
-            Snackbar.make(findViewById(android.R.id.content),"please enter query to search",Snackbar.LENGTH_LONG);
+            Snackbar.make(findViewById(android.R.id.content),"please enter query to search",Snackbar.LENGTH_LONG).show();
             return;
         }
         query=((EditText)findViewById(R.id.tv_query)).getText().toString();

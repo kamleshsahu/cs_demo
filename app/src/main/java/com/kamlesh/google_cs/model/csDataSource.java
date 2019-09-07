@@ -3,6 +3,7 @@ package com.kamlesh.google_cs.model;
 import android.app.Application;
 import android.arch.paging.PageKeyedDataSource;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 
 
@@ -86,6 +87,7 @@ public class csDataSource extends PageKeyedDataSource<Integer,Item> {
                     items = (ArrayList<Item>) csResponse.getItems();
 
                     Log.i("startIdx",":"+(params.key+10));
+
                     callback.onResult(items,(params.key+10));
                 }
             }
