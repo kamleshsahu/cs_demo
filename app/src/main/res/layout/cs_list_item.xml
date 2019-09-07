@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:bind="http://schemas.android.com/apk/res-auto"
-    >
+   >
     <data>
         <variable
             name="movie"
@@ -16,23 +16,41 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cvMovie"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
         android:elevation="3dp"
         card_view:cardCornerRadius="1dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/ivMovie"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:scaleType="fitXY"/>
-
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:src="@drawable/ic_details_black_24dp"
+                    android:layout_margin="16dp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/ivMovie"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="fitXY"/>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
@@ -41,23 +59,43 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="@{movie.title}"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15dp"/>
-
-            <TextView
-                android:id="@+id/tvRating"
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvTitle"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="5dp"
-                android:textColor="@color/colorAccent"
-                android:text="@{movie.snippet}"
-                android:textSize="12dp"/>
+                card_view:el_duration="300"
+                card_view:el_expanded="false"
+                card_view:el_parallax="0.5">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTitle"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/colorAccent"
+                    android:text="@{movie.snippet}"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
+
+
+
+</RelativeLayout>
+
 
 
     </android.support.v7.widget.CardView>

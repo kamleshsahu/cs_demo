@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
-<android.support.v4.widget.SwipeRefreshLayout
-    android:id="@+id/swipe_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
-
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -17,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.kamlesh.google_cs.view.ImageListActivity"
     tools:showIn="@layout/activity_imagelist"
-    android:layout_marginTop="15dp">
+   >
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvMovies"
@@ -27,5 +21,5 @@
         android:scrollbars="vertical" />
 
 </RelativeLayout>
-</android.support.v4.widget.SwipeRefreshLayout>
+
 </layout>

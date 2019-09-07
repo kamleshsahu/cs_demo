@@ -42,7 +42,7 @@ public class CSItemsAdapter extends PagedListAdapter<Item, CSItemsAdapter.MovieV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MovieViewHolder holder, int position) {
 
         Item item=getItem(position);
         String imagePath;
@@ -54,6 +54,13 @@ public class CSItemsAdapter extends PagedListAdapter<Item, CSItemsAdapter.MovieV
                     .into(holder.csListItemBinding.ivMovie);
         }
         holder.csListItemBinding.setMovie(item);
+
+        holder.csListItemBinding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.csListItemBinding.expandableLayout.toggle();
+            }
+        });
 
     }
 

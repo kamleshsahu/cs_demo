@@ -23,10 +23,8 @@ public class ImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         activityMovieBinding= DataBindingUtil.setContentView(this,R.layout.activity_item);
 
@@ -36,7 +34,7 @@ public class ImageActivity extends AppCompatActivity {
 
             item = getIntent().getParcelableExtra("item");
             activityMovieBinding.setMovie(item);
-            getSupportActionBar().setTitle(item.getTitle());
+
 
             if(item.getPagemap()!=null && item.getPagemap().getCse_image()!=null && item.getPagemap().getCse_image().size()>0)
             Glide.with(getApplicationContext())
