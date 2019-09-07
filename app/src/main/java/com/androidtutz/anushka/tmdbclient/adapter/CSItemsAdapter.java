@@ -21,11 +21,11 @@ import com.bumptech.glide.Glide;
 
 
 
-public class csAdapter extends PagedListAdapter<Item, csAdapter.MovieViewHolder> {
+public class CSItemsAdapter extends PagedListAdapter<Item, CSItemsAdapter.MovieViewHolder> {
 
     private Context context;
 
-    public csAdapter(Context context) {
+    public CSItemsAdapter(Context context) {
         super(Item.CALLBACK);
         this.context = context;
     }
@@ -33,38 +33,37 @@ public class csAdapter extends PagedListAdapter<Item, csAdapter.MovieViewHolder>
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         CsListItemBinding movieListItemBinding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext())
+         CsListItemBinding csListItemBinding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext())
          ,R.layout.cs_list_item,parent,false);
 
-        return new MovieViewHolder(movieListItemBinding);
+        return new MovieViewHolder(csListItemBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
 
-        Item movie=getItem(position);
+        Item item=getItem(position);
         String imagePath;
-        if(movie!=null && movie.getPagemap()!=null && movie.getPagemap().getCse_thumbnail()!=null && movie.getPagemap().getCse_thumbnail().size()>0) {
-            imagePath = movie.getPagemap().getCse_thumbnail().get(0).getSrc();
-            //movie.setPosterPath(imagePath);
+        if(item!=null && item.getPagemap()!=null && item.getPagemap().getCse_thumbnail()!=null && item.getPagemap().getCse_thumbnail().size()>0) {
+            imagePath = item.getPagemap().getCse_thumbnail().get(0).getSrc();
             Glide.with(context)
                     .load(imagePath)
                     .placeholder(R.drawable.loading)
-                    .into(holder.movieListItemBinding.ivMovie);
+                    .into(holder.csListItemBinding.ivMovie);
         }
-        holder.movieListItemBinding.setMovie(movie);
+        holder.csListItemBinding.setMovie(item);
 
     }
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
-     private CsListItemBinding movieListItemBinding;
+     private CsListItemBinding csListItemBinding;
 
 
-        public MovieViewHolder(@NonNull CsListItemBinding movieListItemBinding) {
-            super(movieListItemBinding.getRoot());
-            this.movieListItemBinding=movieListItemBinding;
+        public MovieViewHolder(@NonNull CsListItemBinding csListItemBinding) {
+            super(csListItemBinding.getRoot());
+            this.csListItemBinding=csListItemBinding;
 
-            movieListItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
+            csListItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 

@@ -3,6 +3,7 @@ package com.androidtutz.anushka.tmdbclient.model;
 import android.app.Application;
 import android.arch.paging.PageKeyedDataSource;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.androidtutz.anushka.tmdbclient.R;
 import com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item;
@@ -20,7 +21,7 @@ public class csDataSource extends PageKeyedDataSource<Integer,Item> {
   //  private MovieDataService movieDataService;
     private Application application;
     private csDataService dataService;
-    private String query="dunzo";
+    private String query;
 
     public csDataSource(csDataService dataService, Application application,String query) {
         this.dataService = dataService;
@@ -83,7 +84,7 @@ public class csDataSource extends PageKeyedDataSource<Integer,Item> {
 
                     items = (ArrayList<Item>) csResponse.getItems();
 
-//                    System.out.println("calling :"+(params.key+10));
+                    Log.i("startIdx",":"+(params.key+10));
                     callback.onResult(items,(params.key+10));
                 }
             }

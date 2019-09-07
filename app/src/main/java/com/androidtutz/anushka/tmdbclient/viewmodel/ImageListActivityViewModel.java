@@ -17,22 +17,22 @@ import com.androidtutz.anushka.tmdbclient.service.csRetrofitInstance;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class ListViewActivityViewModel extends AndroidViewModel {
+public class ImageListActivityViewModel extends AndroidViewModel {
 
 
-    LiveData<csDataSource> movieDataSourceLiveData;
+    LiveData<csDataSource> csDataSourceLiveData;
     private Executor executor;
-    private LiveData<PagedList<Item>> moviesPagedList;
+    private LiveData<PagedList<Item>> itemsPagedList;
     csDataSourceFactory factory;
-    csDataService movieDataService;
+    csDataService csDataService;
     PagedList.Config config;
     Application application;
-    public ListViewActivityViewModel(@NonNull Application application) {
+    public ImageListActivityViewModel(@NonNull Application application) {
         super(application);
 
 
         this.application=application;
-        movieDataService = csRetrofitInstance.getService();
+        csDataService = csRetrofitInstance.getService();
         config = (new PagedList.Config.Builder())
                 .setEnablePlaceholders(true)
                 .setInitialLoadSizeHint(10)
@@ -44,17 +44,17 @@ public class ListViewActivityViewModel extends AndroidViewModel {
 
 
     public void setQuery(String query){
-        factory = new csDataSourceFactory(movieDataService,application,query);
-        movieDataSourceLiveData=factory.getMutableLiveData();
+        factory = new csDataSourceFactory(csDataService,application,query);
+        csDataSourceLiveData=factory.getMutableLiveData();
 
-        moviesPagedList = (new LivePagedListBuilder<Long, Item>(factory,config))
+        itemsPagedList = (new LivePagedListBuilder<Long, Item>(factory,config))
                 .setFetchExecutor(executor)
                 .build();
 
     }
 
     public LiveData<PagedList<Item>> getMoviesPagedList() {
-        return moviesPagedList;
+        return itemsPagedList;
     }
 
 }

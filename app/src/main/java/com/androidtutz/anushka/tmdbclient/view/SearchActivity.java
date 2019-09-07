@@ -11,7 +11,7 @@ import com.androidtutz.anushka.tmdbclient.R;
 
 public class SearchActivity extends AppCompatActivity {
 
-    String query="harrypotter";
+    String query="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

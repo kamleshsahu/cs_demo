@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 
 public class ImageActivity extends AppCompatActivity {
 
-    private Item movie;
+    private Item item;
     private ActivityItemBinding activityMovieBinding;
 
     @Override
@@ -33,13 +33,13 @@ public class ImageActivity extends AppCompatActivity {
 
         if (intent.hasExtra("item")) {
 
-            movie = getIntent().getParcelableExtra("item");
-            activityMovieBinding.setMovie(movie);
-            getSupportActionBar().setTitle(movie.getTitle());
+            item = getIntent().getParcelableExtra("item");
+            activityMovieBinding.setMovie(item);
+            getSupportActionBar().setTitle(item.getTitle());
 
-            if(movie.getPagemap()!=null && movie.getPagemap().getCse_image()!=null && movie.getPagemap().getCse_image().size()>0)
+            if(item.getPagemap()!=null && item.getPagemap().getCse_image()!=null && item.getPagemap().getCse_image().size()>0)
             Glide.with(getApplicationContext())
-                    .load(movie.getPagemap().getCse_image().get(0).getSrc())
+                    .load(item.getPagemap().getCse_image().get(0).getSrc())
                     .placeholder(R.drawable.loading)
                     .into(activityMovieBinding.ivMovieLarge);
 
