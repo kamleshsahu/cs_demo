@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.csMainActivity">
+        <activity android:name=".view.ImageListActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -26,13 +26,13 @@
             <!--</intent-filter>-->
         </activity>
         <activity
-            android:name=".view.MovieActivity"
+            android:name=".view.ImageActivity"
             android:label="@string/title_activity_movie"
-            android:parentActivityName=".view.csMainActivity"
+            android:parentActivityName=".view.ImageListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.androidtutz.anushka.tmdbclient.view.csMainActivity" />
+                android:value="com.androidtutz.anushka.tmdbclient.view.ImageListActivity" />
         </activity>
     </application>
 

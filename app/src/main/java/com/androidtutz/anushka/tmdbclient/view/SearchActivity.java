@@ -20,7 +20,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void Go(View view) {
-        Intent intent=new Intent(SearchActivity.this,csMainActivity.class);
+        Intent intent=new Intent(SearchActivity.this,ImageListActivity.class);
 
         if(((EditText)findViewById(R.id.tv_query)).getText().toString().equals("")){
             Snackbar.make(findViewById(android.R.id.content),"please enter query to search",Snackbar.LENGTH_LONG);

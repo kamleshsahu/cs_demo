@@ -11,16 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.androidtutz.anushka.tmdbclient.R;
-import com.androidtutz.anushka.tmdbclient.databinding.MovieListItemBinding;
-import com.androidtutz.anushka.tmdbclient.model.Item;
+
+import com.androidtutz.anushka.tmdbclient.databinding.CsListItemBinding;
+import com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item;
 
 
-import com.androidtutz.anushka.tmdbclient.view.MovieActivity;
+import com.androidtutz.anushka.tmdbclient.view.ImageActivity;
 import com.bumptech.glide.Glide;
 
-/**
- * Created by K. A. ANUSHKA MADUSANKA on 7/10/2018.
- */
+
+
 public class csAdapter extends PagedListAdapter<Item, csAdapter.MovieViewHolder> {
 
     private Context context;
@@ -33,8 +33,8 @@ public class csAdapter extends PagedListAdapter<Item, csAdapter.MovieViewHolder>
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         MovieListItemBinding movieListItemBinding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext())
-         ,R.layout.movie_list_item,parent,false);
+         CsListItemBinding movieListItemBinding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext())
+         ,R.layout.cs_list_item,parent,false);
 
         return new MovieViewHolder(movieListItemBinding);
     }
@@ -57,10 +57,10 @@ public class csAdapter extends PagedListAdapter<Item, csAdapter.MovieViewHolder>
     }
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
-     private MovieListItemBinding movieListItemBinding;
+     private CsListItemBinding movieListItemBinding;
 
 
-        public MovieViewHolder(@NonNull MovieListItemBinding movieListItemBinding) {
+        public MovieViewHolder(@NonNull CsListItemBinding movieListItemBinding) {
             super(movieListItemBinding.getRoot());
             this.movieListItemBinding=movieListItemBinding;
 
@@ -74,8 +74,8 @@ public class csAdapter extends PagedListAdapter<Item, csAdapter.MovieViewHolder>
 //
                         Item selctedMovie = getItem(position);
 
-                        Intent intent=new Intent(context, MovieActivity.class);
-                        intent.putExtra("movie",selctedMovie);
+                        Intent intent=new Intent(context, ImageActivity.class);
+                        intent.putExtra("item",selctedMovie);
                         context.startActivity(intent);
 
                     }

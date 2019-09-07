@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">TMDBClient</string>
+    <string name="app_name">Google CustomSearch</string>
     <string name="api_key">b133c1180758351bf9a6631f15a7457f</string>
     <!--<string name="gogole_cs_api_key">AIzaSyDpMYRjzmp67tQoGDmCk8iun_rY657Lefs</string>-->
     <string name="gogole_cs_api_key">AIzaSyD-W9eH5NosDHqvsAfq2NNAE94WVugH6oQ</string>
 
     <string name="gogole_cs_cx">011476162607576381860:ra4vmliv9ti</string>
-    <string name="title_activity_movie">MovieActivity</string>
-    <string name="query">MovieActivity</string>
+    <string name="title_activity_movie">ImageActivity</string>
 </resources>

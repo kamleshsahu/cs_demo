@@ -2,10 +2,11 @@ package com.androidtutz.anushka.tmdbclient.model;
 
 import android.app.Application;
 import android.arch.paging.PageKeyedDataSource;
-import android.databinding.Bindable;
 import android.support.annotation.NonNull;
 
 import com.androidtutz.anushka.tmdbclient.R;
+import com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item;
+import com.androidtutz.anushka.tmdbclient.model.customsearch_model.SearchResponse;
 import com.androidtutz.anushka.tmdbclient.service.csDataService;
 import com.androidtutz.anushka.tmdbclient.service.csRetrofitInstance;
 
@@ -82,7 +83,7 @@ public class csDataSource extends PageKeyedDataSource<Integer,Item> {
 
                     items = (ArrayList<Item>) csResponse.getItems();
 
-                    System.out.println("calling :"+(params.key+10));
+//                    System.out.println("calling :"+(params.key+10));
                     callback.onResult(items,(params.key+10));
                 }
             }

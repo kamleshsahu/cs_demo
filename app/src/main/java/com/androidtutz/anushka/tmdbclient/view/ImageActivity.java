@@ -31,9 +31,9 @@ public class ImageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if (intent.hasExtra("movie")) {
+        if (intent.hasExtra("item")) {
 
-            movie = getIntent().getParcelableExtra("movie");
+            movie = getIntent().getParcelableExtra("item");
             activityMovieBinding.setMovie(movie);
             getSupportActionBar().setTitle(movie.getTitle());
 

@@ -4,8 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.paging.DataSource;
 
-import com.androidtutz.anushka.tmdbclient.model.csDataSource;
-import com.androidtutz.anushka.tmdbclient.service.MovieDataService;
 import com.androidtutz.anushka.tmdbclient.service.csDataService;
 
 public class csDataSourceFactory extends DataSource.Factory {
