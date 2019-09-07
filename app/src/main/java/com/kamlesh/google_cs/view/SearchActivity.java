@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.androidtutz.anushka.tmdbclient.R;
+import com.kamlesh.google_cs.R;
+
 
 public class SearchActivity extends AppCompatActivity {
 

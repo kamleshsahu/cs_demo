@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.androidtutz.anushka.tmdbclient.R;
 
-import com.androidtutz.anushka.tmdbclient.databinding.CsListItemBinding;
+
+
+import com.kamlesh.google_cs.R;
+import com.kamlesh.google_cs.databinding.CsListItemBinding;
 import com.kamlesh.google_cs.model.customsearch_model.Item;
 
 
@@ -34,7 +36,7 @@ public class CSItemsAdapter extends PagedListAdapter<Item, CSItemsAdapter.MovieV
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
          CsListItemBinding csListItemBinding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext())
-         ,R.layout.cs_list_item,parent,false);
+         , R.layout.cs_list_item,parent,false);
 
         return new MovieViewHolder(csListItemBinding);
     }

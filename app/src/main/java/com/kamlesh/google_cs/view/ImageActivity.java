@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.androidtutz.anushka.tmdbclient.R;
 
-import com.androidtutz.anushka.tmdbclient.databinding.ActivityItemBinding;
+
+import com.kamlesh.google_cs.databinding.ActivityItemBinding;
+import com.kamlesh.google_cs.R;
 import com.kamlesh.google_cs.model.customsearch_model.Item;
 import com.bumptech.glide.Glide;
 

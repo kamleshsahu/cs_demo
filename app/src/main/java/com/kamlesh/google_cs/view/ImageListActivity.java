@@ -13,10 +13,10 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.androidtutz.anushka.tmdbclient.R;
 
+import com.kamlesh.google_cs.R;
 import com.kamlesh.google_cs.adapter.CSItemsAdapter;
-import com.androidtutz.anushka.tmdbclient.databinding.ActivityImagelistBinding;
+import com.kamlesh.google_cs.databinding.ActivityImagelistBinding;
 
 import com.kamlesh.google_cs.model.customsearch_model.Item;
 

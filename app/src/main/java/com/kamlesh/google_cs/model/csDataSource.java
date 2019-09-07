@@ -5,7 +5,8 @@ import android.arch.paging.PageKeyedDataSource;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.androidtutz.anushka.tmdbclient.R;
+
+import com.kamlesh.google_cs.R;
 import com.kamlesh.google_cs.model.customsearch_model.Item;
 import com.kamlesh.google_cs.model.customsearch_model.SearchResponse;
 import com.kamlesh.google_cs.service.csDataService;
