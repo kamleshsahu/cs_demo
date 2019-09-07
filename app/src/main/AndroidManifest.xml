@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.SearchActivity">
+        <activity android:name="com.kamlesh.google_cs.view.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ImageListActivity">
+        <activity android:name="com.kamlesh.google_cs.view.ImageListActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -26,13 +26,13 @@
             <!--</intent-filter>-->
         </activity>
         <activity
-            android:name=".view.ImageActivity"
+            android:name="com.kamlesh.google_cs.view.ImageActivity"
             android:label="@string/title_activity_movie"
-            android:parentActivityName=".view.ImageListActivity"
+            android:parentActivityName="com.kamlesh.google_cs.view.ImageListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.androidtutz.anushka.tmdbclient.view.ImageListActivity" />
+                android:value="com.kamlesh.google_cs.view.ImageListActivity" />
         </activity>
     </application>
 

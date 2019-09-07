@@ -6,13 +6,13 @@
     <data>
         <variable
             name="movie"
-            type="com.androidtutz.anushka.tmdbclient.model.customsearch_model.Item" />
+            type="com.kamlesh.google_cs.model.customsearch_model.Item" />
     </data>
 <android.support.design.widget.CoordinatorLayout
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ImageActivity">
+    tools:context="com.kamlesh.google_cs.view.ImageActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

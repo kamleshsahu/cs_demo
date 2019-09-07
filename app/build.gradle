@@ -6,7 +6,7 @@ android {
         enabled =true
     }
     defaultConfig {
-        applicationId "com.androidtutz.anushka.tmdbclient"
+        applicationId "com.kamlesh.google_cs"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
