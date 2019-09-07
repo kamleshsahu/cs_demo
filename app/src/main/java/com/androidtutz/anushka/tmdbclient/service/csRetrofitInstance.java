@@ -3,9 +3,6 @@ package com.androidtutz.anushka.tmdbclient.service;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by K. A. ANUSHKA MADUSANKA on 7/9/2018.
- */
 public class csRetrofitInstance {
 
     private static Retrofit retrofit = null;
